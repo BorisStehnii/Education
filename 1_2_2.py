@@ -1,5 +1,4 @@
-
-# 'Hello World#' + перенос на новую строку
-print("Hello","World", end='#\n')
-# 'Hello__World'
-print("Hello", "World", sep='__')
+first_name = "Boris"
+last_name = "Stehnii"
+name = first_name + " " + last_name
+print(f"Hello, {name}!")
