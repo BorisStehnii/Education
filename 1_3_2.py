@@ -10,12 +10,7 @@ while i <= 9:
     i += 1
 print("Список x:", x)
 print("Список y:", y)
-i = 0
-while i <= len(x)-1:
-    if x.count(x[i]) > 1:
-        x.remove(x[i])
-        i -= 1
-    i += 1
+x = sorted(set(x))
 i = 0
 while i <= len(x)-1:
     if x[i] in y:
