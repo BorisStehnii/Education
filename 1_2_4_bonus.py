@@ -1,9 +1,10 @@
-print("Велосипед","Шлем","Ключи", sep=5*"-", end = "\n")
-print(70*"_")
-print("Выйти из дома", "Напомнить себе проверять погоду!!!!", sep=5*"-")
-print(70*"_")
-print("Крутим педали","Мокним", sep=5*"-")
-print(70*"_")
-print("Поворот направо", "Прямо 150 м.", "Поворот налево", "Прямо 300 м.", sep=5*">")
-print(70*"_")
-print("Вы прибыли на место")
+name = "Creator"
+weather = "sunny"
+message_1 = f"Hey {name}, is it {weather} today"
+print(message_1)
+message_2 = "Hey " + name + ", is it " + weather + " today"
+print(message_2)
+message_3 = "Hey {1}, is it {0} today".format(weather, name)
+print(message_3)
+message_4 = "Hey %s, is it %s today" % (name, weather)
+print(message_4)

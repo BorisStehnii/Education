@@ -17,11 +17,11 @@ elif day == 5:
     day = "Saturday"
 else:
     day = "Sunday"
-# задаем имя
-name = "Our Maker"
-# применяем f
-print(f"Good day {name}! {day} is a perfect day to learn some python.")
-# применяем %
-print(f"Good day %s! %s is a perfect day to learn some python." % (name, day))
-# применяем format
-print("Good day {}! {} is a perfect day to learn some python.".format(name, day))
+
+name = "Creator"      # задаем имя
+
+print(f"Good day {name}! {day} is a perfect day to learn some python.")     # применяем f
+
+print("Good day %s! %s is a perfect day to learn some python." % (name, day))      # применяем %
+
+print("Good day {}! {} is a perfect day to learn some python.".format(name, day))       # применяем format
