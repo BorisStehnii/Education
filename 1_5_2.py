@@ -1,11 +1,10 @@
 Number_1 = "0500715226"
-if Number_1.isdigit() and len(Number_1) == 10:
-    print(f"{Number_1}: правильный формат")
-else:
-    print("Не верный формат")
-
 Number_2 = "050071522И"
-if Number_2.isdigit() and len(Number_2) == 10:
-    print(f"{Number_2}: правильный формат")
-else:
-    print(f"{Number_2}: Неверный формат")
+Number = [Number_1, Number_2]
+i = 0
+while i < 2:
+    if Number[i].isdigit() and len(Number_2) == 10:
+        print(f"{Number[i]}: правильный формат")
+    else:
+        print(f"{Number[i]}: Неверный формат")
+    i += 1
