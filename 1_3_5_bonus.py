@@ -7,7 +7,7 @@ print("Строка_2:", str_2)
 str_3 = []
 str_1 = str_1.split(" ")
 i = 0
-while i <= len(str_1)-1:
+while i < len(str_1):
     str_3.append(str_1[i].capitalize())
     i += 1
 str_3 = " ".join(str_3)
