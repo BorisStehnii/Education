@@ -1,23 +1,7 @@
-import datetime
+import time
 
-# определяем день недели)
-day = datetime.datetime.today()
-day = day.weekday()
-if day == 0:
-    day = "Monday"
-elif day == 1:
-    day = "Tuesday"
-elif day == 2:
-    day = "Wednesday"
-elif day == 3:
-    day = "Thursday"
-elif day == 4:
-    day = "Friday"
-elif day == 5:
-    day = "Saturday"
-else:
-    day = "Sunday"
 
+day = time.strftime("%A", )
 name = "Creator"      # задаем имя
 
 print(f"Good day {name}! {day} is a perfect day to learn some python.")     # применяем f
