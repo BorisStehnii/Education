@@ -1,7 +1,7 @@
 import time
 
 
-day = time.strftime("%A", )
+day = time.strftime("%A")
 name = "Creator"      # задаем имя
 
 print(f"Good day {name}! {day} is a perfect day to learn some python.")     # применяем f
