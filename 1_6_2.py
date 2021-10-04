@@ -1,20 +1,25 @@
-stock = {
-    "banana": 6,
-    "apple": 1,
-    "orange": 32,
-    "pear": 15
-}
-prices = {
-    "banana": 4,
-    "apple": 2,
-    "orange": 1.5,
-    "pear": 3
-}
-sum_buy = 0
-for key_1 in stock.keys():
-    for key_2 in prices.keys():
-        if key_1 == key_2:
-            sum_buy += stock[key_1]*prices[key_2]
-print(sum_buy)
+def create_dicts_product():
+    stock_dict = {}
+    prices_dict = {}
+    while True:
+        product = input("Введите продукт:")
+        stock = input("Введите количество:")
+        if not stock.isdigit():
+            print("НЕВЕРНЫЙ формат количества")
+            continue
+        prices = input("Введите цену:")
+        if not prices.isdigit():
+            print("НЕВЕРНЫЙ формат цены")
+            continue
+        stock_dict.update({product: int(stock)})
+        prices_dict.update({product: int(prices)})
+        command = input("Введите 'E' если закончили ввод:").lower()
+        if command == "e":
+            break
+    return stock_dict, prices_dict
 
-sum_buy_2 = [stock[key_1]*prices[key_2] for key_1 in stock.keys() for key_2 in prices.keys() if key_1 == key_2]
+
+stock_buy, prices_buy = create_dicts_product()
+sum_buy = sum(stock_buy[key_1]*prices_buy[key_2] for key_1 in stock_buy.keys()
+              for key_2 in prices_buy.keys() if key_1 == key_2)
+print("Сумма покупок:", sum_buy)

@@ -6,4 +6,4 @@ while True:
     break
 list_words = string.lower().split(" ")
 new_string = {key: list_words.count(key) for key in list_words}
-print(new_string)
+print("Сумма по словам:", new_string)
