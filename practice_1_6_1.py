@@ -16,7 +16,6 @@ symbol_ = params[2]
 #     else:
 #         break
 
-
 j = height - 1
 for i in range(height*2):
     if i > height:
