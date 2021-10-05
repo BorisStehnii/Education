@@ -6,8 +6,8 @@ string = sys.argv
 
 
 def phone():
-    x = ([str(random.randint(0, 9)) for i in range(10)])
-    phone_number = ["+380(", x[0], x[1], x[2], ")", x[3], x[4], x[5], "-", x[6], x[7], "-", x[8], x[9]]
+    phone_number = ["+380(", str(random.randint(100, 999)), ")", str(random.randint(100, 999)),
+                    "-", str(random.randint(10, 99)), "-", str(random.randint(10, 99))]
     return phone_number
 
 
@@ -16,7 +16,7 @@ if len(string) < 2 or string[1].isdigit():
 else:
     number = int(string[1])
 
-list_phone_numb = ["".join(phone()) for i in range(number)]
+list_phone_numb = ["".join(phone()) for _ in range(number)]
 print(list_phone_numb)
 
 input("Press ENTER to exit")
