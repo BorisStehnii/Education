@@ -20,6 +20,5 @@ def create_dicts_product():
 
 
 stock_buy, prices_buy = create_dicts_product()
-sum_buy = sum(stock_buy[key_1]*prices_buy[key_2] for key_1 in stock_buy.keys()
-              for key_2 in prices_buy.keys() if key_1 == key_2)
+sum_buy = sum(stock_buy.get(key, 0)*prices_buy.get(key, 0) for key in stock_buy.keys())
 print("Сумма покупок:", sum_buy)
