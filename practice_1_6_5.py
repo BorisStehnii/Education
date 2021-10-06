@@ -6,8 +6,8 @@ string = sys.argv
 
 
 def phone():
-    phone_number = ["+380(", str(random.randint(100, 999)), ")", str(random.randint(100, 999)),
-                    "-", str(random.randint(10, 99)), "-", str(random.randint(10, 99))]
+    phone_number = ["+380(" + str(random.randint(100, 999)) + ")" + str(random.randint(100, 999)),
+                    "-" + str(random.randint(10, 99)) + "-" + str(random.randint(10, 99))]
     return phone_number
 
 
