@@ -1,16 +1,20 @@
+# Добавил eval
 import random
 
 while True:
     x = random.randint(1, 10)
     y = random.randint(1, 10)
-    result = input(f"{x} + {x} * {y} = ")
+    oper_1 = random.choice(["-", "+", "*"])
+    oper_2 = random.choice(["-", "+", "*"])
+
     while True:
-        if int(result) == (x + x*y):
+        result = input(f"{x} {oper_1} {x} {oper_2} {y} = ")
+        if not result.replace("-", "").isdigit():
+            continue
+        elif int(result) == eval(f"{x} {oper_1} {x} {oper_2} {y}"):
             print("Right")
             break
-        else:
-            result = input(f"{x} + {x} * {y} = ")
-            continue
+
     command = input("will we continue?(Y/n):")
     if command.lower() == "y":
         continue
