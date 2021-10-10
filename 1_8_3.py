@@ -6,7 +6,7 @@ def make_country(oper_, *args):
 
     string_ = oper_.join(map(str, args))
     result = eval(string_)
-    print(result)
+    print(string_, "=", result)
 
 
 make_country("+", 7, -8, 9)
