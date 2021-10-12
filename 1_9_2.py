@@ -8,7 +8,12 @@ def exit_():
 
 
 def add_new():
-    telephone_number = input("введи номер телефона:").lower()
+
+    while True:
+        telephone_number = input("введи номер телефона:").lower()
+        if telephone_number.isdigit():
+            break
+
     first_name = input("введи новое имя:").lower()
     last_name = input("введи новую фамилию:").lower()
     city = input("введи новый город:").lower()
@@ -33,7 +38,7 @@ def search():
                 print(key_1, data_1[key_1])
                 break
             data_2 = data_1[key_1]
-            for key_2, value in data_2.items():
+            for value in data_2.values():
                 if value == search_by:
                     print(key_1, data_1[key_1])
                     break
