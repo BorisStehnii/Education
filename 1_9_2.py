@@ -10,7 +10,7 @@ def exit_():
 def add_new():
 
     while True:
-        telephone_number = input("введи номер телефона:").lower()
+        telephone_number = input("введи номер телефона:")
         if telephone_number.isdigit():
             break
 
@@ -22,16 +22,19 @@ def add_new():
                                   "last": last_name,
                                   "full": full_name,
                                   "city": city}}
-    with open("Phonebook.json", "r") as phonebook:
-        data = json.load(phonebook)
+    try:
+        with open("Phonebook.json", "r") as phonebook:
+            data = json.load(phonebook)
+    except:
+        data = dict()
     data.update(entries)
-    with open("Phonebook.json", "w+") as phonebook:
-        json.dump(data, phonebook)
+    with open("Phonebook.json", "w") as phonebook:
+        json.dump(data, phonebook, indent=4)
 
 
 def search():
     search_by = input("Введите для поиска: ").lower()
-    with open("Phonebook.json", "r") as phonebook:
+    with open("Phonebook.json") as phonebook:
         data_1 = json.load(phonebook)
         for key_1 in data_1:
             if key_1 == search_by:
@@ -50,10 +53,11 @@ def delete():
         data = json.load(phonebook)
     if data.get(key):
         del data[key]
+        print("Номер удален")
     else:
         print("нет такого номера")
-    with open("Phonebook.json", "w+") as phonebook:
-        json.dump(data, phonebook)
+    with open("Phonebook.json", "w") as phonebook:
+        json.dump(data, phonebook, indent=4)
 
 
 def command():
@@ -70,5 +74,6 @@ def command():
     exit_()
 
 
-while True:
-    command()
+if __name__ == '__main__':
+    while True:
+        command()
