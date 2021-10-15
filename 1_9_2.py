@@ -25,7 +25,7 @@ def add_new():
     try:
         with open("Phonebook.json", "r") as phonebook:
             data = json.load(phonebook)
-    except:
+    except json.decoder.JSONDecodeError:
         data = dict()
     data.update(entries)
     with open("Phonebook.json", "w") as phonebook:
@@ -60,15 +60,23 @@ def delete():
         json.dump(data, phonebook, indent=4)
 
 
+def always_dict():
+    with open("Phonebook.json") as phonebook:
+        data = json.load(phonebook)
+    print(data)
+
+
 def command():
     command_ = input("Какое действие ты хочешь сделать (запись-А, поиск-S, обновление для номера-U, удаление-D, "
-                     "выход-Е: ")
+                     "весь словарь-О, выход-Е: ")
     if command_.lower() == "a":
         add_new()
     elif command_.lower() == "s":
         search()
     elif command_.lower() == "u":
         add_new()
+    elif command_.lower() == "o":
+        always_dict()
     elif command_.lower() == "d":
         delete()
     exit_()
