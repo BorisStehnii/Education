@@ -14,7 +14,7 @@ def check_error_oops_2():
     try:
         error_oops()
     except KeyError:
-        print("IndexError")
+        print("KeyError")
 
 
 check_error_oops_1()
